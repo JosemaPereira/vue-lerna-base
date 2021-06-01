@@ -10,5 +10,11 @@
   "engines": {
     "node": ">10.x",
     "yarn": ">1.0.0"
+  },
+  "scripts": {
+    "prebuild": "lerna run lint-app",
+    "start": "lerna run start-app --stream",
+    "build": "lerna run build-app",
+    "postbuild": "lerna version"
   }
 }
