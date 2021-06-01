@@ -1,0 +1,26 @@
+name: Version
+on:
+  push:
+    branches: [ release/* ]
+    
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Configure CI Git User
+        run: |
+          git config --global user.name 'Josema Pereira'
+          git config --global user.email 'josema.pereira.cih@gmail.com'
+      
+      - name: Install dependencies
+        run: yarn
+
+      - name: Linter
+        run: yarn prebuild
+      
+      - name: Version
+        run: yarn postbuild
