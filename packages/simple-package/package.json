@@ -16,7 +16,8 @@
     "lib"
   ],
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "karma": "karma"
   },
   "dependencies": {
     "@sakura-ps/simple-contract": "1.0.0"
