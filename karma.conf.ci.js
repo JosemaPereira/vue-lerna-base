@@ -3,10 +3,9 @@ module.exports = (mixConfig, overrideConfig) =>
     Object.assign({}, mixConfig, {
       plugins: [
         ...mixConfig.plugins,
-        require('karma-jsdom-launcher'),
-        require('karma-teamcity-reporter')
+        require('karma-jsdom-launcher')
       ],
-      reporters: [...mixConfig.reporters, 'teamcity']
+      reporters: [...mixConfig.reporters]
     }),
     Object.assign({}, { browsers: ['jsdom'] }, overrideConfig)
   );
