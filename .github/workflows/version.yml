@@ -18,9 +18,20 @@ jobs:
       
       - name: Install dependencies
         run: yarn
-
-      - name: Linter
-        run: yarn prebuild
       
-      - name: Version
+      - name: Resolve internal dependencies
+        run: lerna bootstrap
+
+      - name: Prebuild
+        run: yarn prebuild
+
+      - name: Build
+        run: yarn build
+
+      - name: Test
+        run: yarn test
+        env:
+          CI_ENV: true
+        
+      - name: Postbuild
         run: yarn postbuild

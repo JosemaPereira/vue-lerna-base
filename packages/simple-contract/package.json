@@ -1,0 +1,21 @@
+{
+  "name": "@sakura-ps/simple-contract",
+  "version": "1.0.1",
+  "description": "Simple contract",
+  "author": "Josema PC",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "fesm5": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "tsc": "tsc",
+    "eslint": "eslint"
+  }
+}
