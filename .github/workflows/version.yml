@@ -18,9 +18,15 @@ jobs:
       
       - name: Install dependencies
         run: yarn
-
-      - name: Linter
-        run: yarn prebuild
       
-      - name: Version
+      - name: Test
+        run: yarn test
+
+      - name: Prebuild
+        run: yarn prebuild
+
+      - name: Build
+        run: yarn build
+
+      - name: Postbuild
         run: yarn postbuild
