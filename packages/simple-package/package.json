@@ -17,7 +17,8 @@
   ],
   "scripts": {
     "tsc": "tsc",
-    "karma": "karma"
+    "karma": "karma",
+    "eslint": "eslint"
   },
   "dependencies": {
     "@sakura-ps/simple-contract": "1.0.0"

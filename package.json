@@ -6,6 +6,12 @@
   ],
   "devDependencies": {
     "@types/jasmine": "^3.7.6",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "@vue/cli-plugin-eslint": "^4.5.13",
+    "core-js": "^3.13.1",
+    "eslint": "^7.27.0",
+    "eslint-plugin-vue": "^7.10.0",
     "jasmine": "^3.4.0",
     "jsdom": "^16.6.0",
     "karma": "^6.3.3",
@@ -23,10 +29,12 @@
     "yarn": ">1.0.0"
   },
   "scripts": {
-    "build": "yarn run build:tsc",
-    "build:tsc": "lerna run tsc",
-    "start": "lerna run start-app --stream",
+    "prebuild": "lerna run eslint -- src/**/*.ts && lerna run lint-app",
+    "build": "yarn run build:tsc && yarn run build:app",
     "postbuild": "lerna version",
-    "test": "lerna run karma -- start --single-run"
+    "start": "yarn run build:tsc && lerna run start-app --stream",
+    "test": "lerna run karma -- start --single-run",
+    "build:tsc": "lerna run tsc",
+    "build:app": "lerna run build-app"
   }
 }

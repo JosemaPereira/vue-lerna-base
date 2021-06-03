@@ -15,6 +15,7 @@
     "lib"
   ],
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "eslint": "eslint"
   }
 }

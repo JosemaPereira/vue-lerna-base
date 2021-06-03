@@ -1,8 +1,6 @@
-
 import { SimpleService } from '@sakura-ps/simple-contract';
-
-export class ServicePackage implements SimpleService<String> {
-  getValue(): String {
-    return "Hello world"
+export class ServicePackage implements SimpleService<string> {
+  getValue(): string {
+    return 'Hello World'
   }
 }

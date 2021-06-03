@@ -14,6 +14,7 @@
       "allowBranch": [
         "release/*"
       ],
+      "amend": true,
       "conventionalCommits": true,
       "exact": true,
       "includeMergedTags": true,
