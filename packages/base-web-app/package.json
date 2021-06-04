@@ -17,13 +17,14 @@
     "vuetify": "^2.4.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.14.4",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.27.0",
     "eslint-plugin-vue": "^7.10.0",
-    "sass": "^1.32.0",
+    "sass": "1.32.0",
     "sass-loader": "^10.0.0",
     "vue-cli-plugin-vuetify": "~2.4.0",
     "vue-template-compiler": "^2.6.11",
@@ -44,8 +45,6 @@
     "rules": {}
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
+    "> 0.25%, not dead"
   ]
 }
