@@ -31,9 +31,9 @@ jobs:
       run: lerna bootstrap
       
     - name: Make envfile
-        run: |
-          touch packages/base-web-app/.env
-          echo "VUE_APP_TITLE: ${{ secrets.VUE_APP_TITLE }}\n" >> packages/base-web-app/.env
+      run: |
+        touch packages/base-web-app/.env
+        echo "VUE_APP_TITLE: ${{ secrets.VUE_APP_TITLE }}\n" >> packages/base-web-app/.env
           
     - name: Production Build
       run: yarn build:ci
