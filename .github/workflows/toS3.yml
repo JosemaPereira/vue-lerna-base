@@ -1,0 +1,43 @@
+name: To S3
+on:
+  push:
+    branches: 
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Yarn Install
+      run: yarn install
+        
+    - name: Resolve internal dependencies
+      run: lerna bootstrap
+      
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1
+      with:
+        envkey_VUE_APP_TITLE: ${{ secrets.VUE_APP_TITLE }}
+        directory: ${{ secrets.VUE_APP_DIRECTORY }}
+        file_name: .env
+          
+    - name: Production Build
+      run: yarn build:ci
+      
+    - name: Deploy to S3
+      uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --acl public-read --delete
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+        SOURCE_DIR: ${{ secrets.VUE_APP_DIRECTORY_DIST }}
