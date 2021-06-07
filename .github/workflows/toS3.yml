@@ -1,5 +1,6 @@
 name: To S3
 on:
+  workflow_dispatch:
   push:
     branches: 
       - master
