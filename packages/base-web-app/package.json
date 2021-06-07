@@ -1,6 +1,6 @@
 {
   "name": "base-web-app",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -12,7 +12,7 @@
     "start-app": "yarn serve"
   },
   "dependencies": {
-    "@sakura-ps/simple-package": "1.0.1",
+    "@sakura-ps/simple-package": "1.1.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
