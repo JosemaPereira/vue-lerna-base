@@ -15,6 +15,10 @@
           {{title}}
         </h1>
 
+        <h2 class="display-2 font-weight-bold mb-3">
+          {{subtitle}}
+        </h2>
+
         <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
           <br>please join our online
@@ -97,6 +101,7 @@ const service = new ServicePackage();
   export default {
     data: () => ({
       title: service.getValue(),
+      subtitle: process.env.VUE_APP_TITLE,
       ecosystem: [
         {
           text: 'vuetify-loader',
