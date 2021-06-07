@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.4.0 (2021-06-07)
+
+
+### Features
+
+* **base-web-app:** Add environment vars config ([55725fe](https://github.com/JosemaPereira/vue-lerna-base/commit/55725fe37fadf9dfb4349185d1ef443e604f952e))
+
+
+
+
+
 # 0.3.0 (2021-06-07)
 
 
