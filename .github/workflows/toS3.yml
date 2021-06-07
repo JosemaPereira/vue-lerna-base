@@ -31,11 +31,9 @@ jobs:
       run: lerna bootstrap
       
     - name: Make envfile
-      uses: SpicyPizza/create-envfile@v1
-      with:
-        envkey_VUE_APP_TITLE: ${{ secrets.VUE_APP_TITLE }}
-        directory: ${{ secrets.VUE_APP_DIRECTORY }}
-        file_name: .env
+        run: |
+          touch packages/base-web-app/.env
+          echo "VUE_APP_TITLE: ${{ secrets.VUE_APP_TITLE }}\n" >> packages/base-web-app/.env
           
     - name: Production Build
       run: yarn build:ci
@@ -45,8 +43,8 @@ jobs:
         aws s3 rm ${{ secrets.AWS_BUCKET }} --recursive
         aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/favicon.ico ${{ secrets.AWS_BUCKET }}
         aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/index.html ${{ secrets.AWS_BUCKET }}
-        aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/css ${{ secrets.AWS_BUCKET }} --metadata '{"Content-Encoding":"gzip"}' --recursive
-        aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/js ${{ secrets.AWS_BUCKET }} --metadata '{"Content-Encoding":"gzip"}' --recursive
-        aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/img ${{ secrets.AWS_BUCKET }} --recursive
+        aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/css ${{ secrets.AWS_BUCKET }}/css --content-encoding gzip --recursive
+        aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/js ${{ secrets.AWS_BUCKET }}/js ---content-encoding gzip --recursive
+        aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/img ${{ secrets.AWS_BUCKET }}/img --recursive
 
 
