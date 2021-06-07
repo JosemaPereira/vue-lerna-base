@@ -6,9 +6,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-app": "yarn build",
+    "build-app": "NODE_ENV=develop yarn build",
     "lint-app": "yarn lint",
-    "start-app": "yarn serve"
+    "start-app": "yarn serve",
+    "build-app:ci": "NODE_ENV=production yarn build"
   },
   "dependencies": {
     "@sakura-ps/simple-package": "1.0.1",
@@ -24,6 +25,7 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "compression-webpack-plugin": "6.1.1",
     "eslint": "^7.27.0",
     "eslint-plugin-vue": "^7.10.0",
     "sass": "1.32.0",

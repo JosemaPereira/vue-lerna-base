@@ -34,6 +34,9 @@
     "start": "yarn run build:tsc && lerna run start-app --stream",
     "test": "lerna run karma -- start --single-run",
     "build:tsc": "lerna run tsc",
-    "build:app": "lerna run build-app"
+    "build:ci": "yarn run build:tsc && yarn run build:ci:app",
+    "build:app": "lerna run build-app",
+    "build:ci:app": "lerna run build-app:ci",
+    "test:ci": "NODE_ENV=production lerna run karma -- start --single-run"
   }
 }

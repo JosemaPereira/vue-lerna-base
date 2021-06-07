@@ -26,12 +26,10 @@ jobs:
         run: yarn prebuild
 
       - name: Build
-        run: yarn build
+        run: yarn build:ci
 
       - name: Test
-        run: yarn test
-        env:
-          CI_ENV: true
+        run: yarn test:ci
         
       - name: Postbuild
         run: yarn postbuild
