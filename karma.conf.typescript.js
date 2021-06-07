@@ -1,6 +1,6 @@
 let karmaBaseConf;
 
-if (process.env.CI_ENV) {
+if (process.env.NODE_ENV=='production') {
   karmaBaseConf = require('./karma.conf.ci');
 } else {
   karmaBaseConf = require('./karma.conf.common');
