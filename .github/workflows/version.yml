@@ -25,8 +25,16 @@ jobs:
       - name: Prebuild
         run: yarn prebuild
 
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_VUE_APP_TITLE: ${{ secrets.VUE_APP_TITLE }}
+          directory: ${{ secrets.VUE_APP_DIRECTORY }}
+          file_name: .env
+      
       - name: Build
         run: yarn build:ci
+
 
       - name: Test
         run: yarn test:ci
