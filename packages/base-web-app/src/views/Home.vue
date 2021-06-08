@@ -3,7 +3,7 @@
 </template>
 
 <script>
-const helloWorldComponent = () => import('@/components/HelloWorld.vue');
+const helloWorldComponent = () => import('@/components/HelloWorld/Component.vue');
 
 export default {
   name: 'Home',
