@@ -9,7 +9,8 @@
     "build-app": "NODE_ENV=develop yarn build",
     "build-app:ci": "NODE_ENV=production yarn build",
     "lint-app": "yarn lint",
-    "start-app": "yarn serve"
+    "start-app": "yarn serve",
+    "storybook": "start-storybook -p 9001 -c .storybook -s public"
   },
   "dependencies": {
     "@sakura-ps/simple-package": "1.2.0",
@@ -21,6 +22,10 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.14.4",
+    "@socheatsok78/storybook-addon-vuetify": "^0.1.8",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-knobs": "^6.2.9",
+    "@storybook/vue": "^6.2.9",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
