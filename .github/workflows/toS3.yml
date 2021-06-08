@@ -44,7 +44,7 @@ jobs:
         aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/favicon.ico ${{ secrets.AWS_BUCKET }}
         aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/index.html ${{ secrets.AWS_BUCKET }}
         aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/css ${{ secrets.AWS_BUCKET }}/css --content-encoding gzip --recursive
-        aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/js ${{ secrets.AWS_BUCKET }}/js ---content-encoding gzip --recursive
+        aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/js ${{ secrets.AWS_BUCKET }}/js --content-encoding gzip --recursive
         aws s3 cp ${{ secrets.VUE_APP_DIRECTORY_DIST }}/img ${{ secrets.AWS_BUCKET }}/img --recursive
 
 
