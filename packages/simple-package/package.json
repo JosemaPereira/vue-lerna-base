@@ -1,6 +1,6 @@
 {
   "name": "@sakura-ps/simple-package",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Simple package",
   "author": "Josema PC",
   "main": "lib/index.js",
@@ -21,6 +21,6 @@
     "eslint": "eslint"
   },
   "dependencies": {
-    "@sakura-ps/simple-contract": "1.2.0"
+    "@sakura-ps/simple-contract": "1.2.1"
   }
 }
